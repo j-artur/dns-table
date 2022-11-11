@@ -1,6 +1,6 @@
 package table;
 
-public class Entry<K extends HashTable.Key, V> {
+public class Entry<K, V> {
     private K key;
     private V value;
     private Entry<K, V> next;

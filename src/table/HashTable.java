@@ -2,12 +2,7 @@ package table;
 
 import java.util.function.BiConsumer;
 
-public class HashTable<K extends HashTable.Key, V> {
-    public interface Key {
-        public int hashCode();
-
-        public boolean equals(Key other);
-    }
+public class HashTable<K, V> {
 
     int size;
     Entry<K, V>[] entries;
