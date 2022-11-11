@@ -14,6 +14,8 @@ public class App {
         table.set("To", "Code");
         table.set("In", "Java");
 
-        table.forEach((key, value) -> System.out.println(key + " " + value));
+        for (var entry : table) {
+            System.out.println(entry.key() + ": " + entry.value());
+        }
     }
 }

@@ -1,9 +1,8 @@
 package table;
 
-import java.util.function.BiConsumer;
+import java.util.Iterator;
 
-public class HashTable<K, V> {
-
+public class HashTable<K, V> implements Iterable<Entry<K, V>> {
     int size;
     Entry<K, V>[] entries;
 
@@ -72,19 +71,9 @@ public class HashTable<K, V> {
         return null;
     }
 
-    // Iterates through the entries array and executes the given function
-    public void forEach(BiConsumer<K, V> consumer) {
-        for (Entry<K, V> entry : entries) {
-            if (entry == null)
-                continue;
-
-            consumer.accept(entry.key(), entry.value());
-
-            while (entry.hasNext()) {
-                entry = entry.next();
-                consumer.accept(entry.key(), entry.value());
-            }
-        }
+    // Returns an iterator for the entries array
+    public Iterator<Entry<K, V>> iterator() {
+        return new HashTableIterator<>(this);
     }
 
 }
