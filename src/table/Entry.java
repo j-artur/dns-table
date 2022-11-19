@@ -3,11 +3,13 @@ package table;
 public class Entry<K, V> {
     private K key;
     private V value;
+    private int frequency;
     private Entry<K, V> next;
 
-    public Entry(K key, V value) {
+    Entry(K key, V value) {
         this.key = key;
         this.value = value;
+        this.frequency = 0;
     }
 
     public K key() {
@@ -24,12 +26,16 @@ public class Entry<K, V> {
         return oldValue;
     }
 
-    Entry<K, V> next() {
-        return next;
+    int frequency() {
+        return frequency;
     }
 
-    boolean hasNext() {
-        return next != null;
+    void incrementFrequency() {
+        this.frequency++;
+    }
+
+    Entry<K, V> next() {
+        return next;
     }
 
     void setNext(Entry<K, V> next) {
