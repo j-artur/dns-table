@@ -66,7 +66,10 @@ public class FcList<K, V> implements Iterable<Entry<K, V>> {
                         Entry<K, V> temp = current;
                         current = previous;
                         previous = temp;
-                        previous.setNext(current.next());
+
+                        // update the next pointers
+                        current.setNext(previous.next());
+                        previous.setNext(current);
 
                         // if the node is at the front of the array, update the head
                         if (previous == head)
