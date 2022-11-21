@@ -4,7 +4,7 @@ import debug.Debug.Color;
 public class App {
     private static boolean debugMode = false;
     private static long timestamp = System.currentTimeMillis();
-    private static long waitingTime = 5000;
+    private static long waitingTime = 10000;
 
     static void makeRequest(Server server) {
         String domain = Debug.input(Color.RESET, "Enter a domain to request: ", Color.YELLOW_BRIGHT);

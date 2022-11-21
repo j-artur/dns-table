@@ -4,7 +4,7 @@ import table.HashTable;
 
 public class Server {
     private boolean debugMode;
-    private HashTable<Str, Str> dnsTable = new HashTable<>(30);
+    private HashTable<Str, Str> dnsTable = new HashTable<>(12);
 
     public Server(boolean debugMode) {
         this.debugMode = debugMode;
