@@ -42,8 +42,8 @@ public class HashTable<K extends HashTable.Key, V> implements Iterable<Entry<K, 
 
     // Sets the value for the given key, and returns the old value
     public V set(K key, V value) {
-        if (key == null) {
-            throw new IllegalArgumentException("Key cannot be null");
+        if (key == null || value == null) {
+            throw new IllegalArgumentException("Key and value cannot be null");
         }
 
         int index = hash(key);
