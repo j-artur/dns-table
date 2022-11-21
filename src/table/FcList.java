@@ -2,6 +2,7 @@ package table;
 
 import java.util.Iterator;
 
+// FcList is a singly-linked list with a frequency counter
 public class FcList<K, V> implements Iterable<Entry<K, V>> {
     private Entry<K, V> head;
 

@@ -6,7 +6,7 @@ public class App {
     private static long timestamp = System.currentTimeMillis();
     private static long waitingTime = 10000;
 
-    static void makeRequest(Server server) {
+    static void makeRequest(DNSServer server) {
         String domain = Debug.input(Color.RESET, "Enter a domain to request: ", Color.YELLOW_BRIGHT);
         server.request(domain);
     }
@@ -21,9 +21,9 @@ public class App {
     }
 
     public static void main(String[] args) throws Exception {
-        Server server = new Server(debugMode);
-
         Db db = new Db("assets/db.txt");
+
+        DNSServer server = new DNSServer(12, debugMode);
 
         server.insert(db.entries().subList(0, 25));
         makeRequest(server);

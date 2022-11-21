@@ -2,12 +2,13 @@ import debug.Debug;
 import debug.Debug.Color;
 import table.HashTable;
 
-public class Server {
+public class DNSServer {
     private boolean debugMode;
-    private HashTable<Str, Str> dnsTable = new HashTable<>(12);
+    private HashTable<Str, Str> dnsTable;
 
-    public Server(boolean debugMode) {
+    public DNSServer(int tableSize, boolean debugMode) {
         this.debugMode = debugMode;
+        dnsTable = new HashTable<Str, Str>(tableSize);
     }
 
     public void insert(Iterable<Db.Entry> entries) {
